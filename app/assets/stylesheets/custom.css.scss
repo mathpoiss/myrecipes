@@ -16,6 +16,23 @@ $navbar-default-bg: black;
 	text-decoration: none;
 }
 
+.color-nav-link {
+	color: #fff;
+	text-decoration: none;
+}
+
+.color-search-btn {
+	color: #fff;
+	border-color: #33CDFF;
+}
+
+.color-search-btn:hover {
+	color: #fff;
+	background-color: #33CDFF;
+	border-color: #33CDFF;
+}
+
+
 .jumbotron {
 	background-image: asset-url('cover-image.jpg');
 	background-size: cover;
@@ -38,6 +55,13 @@ $navbar-default-bg: black;
 .btn-xlarge:hover {
 	background-color: #B16313;
 	border-color: #B16313;
+}
+
+.color-row p {
+	color: #000000;
+	font-weight: normal;
+	text-align: left;
+	margin-bottom: 20px;
 }
 
 footer {
