@@ -66,12 +66,52 @@ footer {
   padding-top: 3rem;
   padding-bottom: 3rem;
   background-color: #dee4ed;
+  margin-top: 30px;
 }
 
 footer p {
   margin-bottom: .25rem;
 }
 
+.card a {
+	color: #33CDFF;
+}
+
+.t1 {
+	border: solid 1px black;
+}
+
+.t2 {
+	border: solid 2px #0061ff;
+}
+
+.t3 {
+	border: solid 3px #ff0000;
+}
+/*
+.t4 {
+	border: solid 4px #15ff00;
+}
+
+.t5 {
+	border: solid 1px black;
+}
+
+.t6 {
+	border: solid 1px black;
+}*/
+
+.chef_info {
+	margin-bottom: -20px;
+}
+
+.center_chef_img {
+	margin-top: 5px;
+}
+
+.colormatch a {
+	color: #FF9B35;
+}
 
 
 

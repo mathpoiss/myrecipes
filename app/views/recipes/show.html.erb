@@ -1,0 +1,51 @@
+<%= render 'shared/page_title', title: @recipe.name %>
+
+<div class="row justify-content-center">
+	<div class="col-md-8">
+		<div class="card">
+			<h4 class="card-header text-center">Steps:</h4>
+
+			<div class="card-block">
+				<p class="card-text"><%= simple_format(@recipe.description) %></p>
+				<hr />
+				<div class="d-flex align-items-end flex-column chef_info">
+					<div class="card-block text-center">
+						<p>Created by:</p>
+
+						<p> <%= link_to gravatar_for(@recipe.chef), recipes_path %></p>
+
+						<p class="card-text center_name_chef"><small><%= @recipe.chef.chefname %></small>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="card-footer text-center">created: <%= time_ago_in_words(@recipe.created_at) %> ago
+			</div>
+
+		</div>
+	</div>
+</div>
+
+
+
+<div class="row justify-content-center">
+	<div class="col-md-8">
+		<div class="card">
+			<div class="card-header text-center">
+			Featured
+			</div>
+
+			<div class="card-block">
+				<h4 class="card-title">Special title treatment</h4>
+				<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+				<a href="#" class="btn btn-primary">Go somewhere</a>
+			</div>
+
+			<div class="card-footer text-center">
+				2 days ago
+			</div>
+
+		</div>
+	</div>
+</div>
