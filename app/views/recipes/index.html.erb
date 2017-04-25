@@ -1,3 +1,15 @@
 <%= render 'shared/page_title', title: "listing all recipes" %>
+<nav aria-label="Page navigation">
+	<ul class="pagination justify-content-center">
+		<%= will_paginate %>
+	</ul>
+</nav>
 
 <%= render 'recipe', obj: @recipes %>
+
+<nav aria-label="Page navigation">
+	<ul class="pagination justify-content-center">
+		<%= will_paginate %>
+	</ul>
+</nav>
+		

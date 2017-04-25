@@ -1,0 +1,36 @@
+<%= render 'shared/page_title', title: "Showing all chefs" %>
+
+<nav aria-label="Page navigation">
+	<ul class="pagination justify-content-center">
+		<%= will_paginate %>
+	</ul>
+</nav>
+
+<% @chefs.each do |chef| %>
+<ul class="listing">
+	<div class="row mb-3">
+		<div class="col-4 offset-4">
+			<div class="card text-center">
+				<div class="card-block">
+				<li>
+					<%= link_to gravatar_for(chef), chef_path(chef) %>
+				</li>
+				<li class="chef-title">
+					<%= link_to chef.chefname.capitalize, chef_path(chef) %>
+				</li>
+				<li><small>
+					<%= pluralize(chef.recipes.count, "recipe") if chef.recipes %>
+				</small></li>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</ul>
+<% end %>
+
+<nav aria-label="Page navigation">
+	<ul class="pagination justify-content-center">
+		<%= will_paginate %>
+	</ul>
+</nav>
