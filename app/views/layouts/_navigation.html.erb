@@ -8,23 +8,45 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <%= link_to 'All recipes', recipes_path, class: "nav-link" %>
       </li>
       <li class="nav-item">
         <%= link_to 'Chefs', chefs_path, class: "nav-link" %>
       </li>
-      <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Recipes</a>
-          <div class="dropdown-menu" aria-labelledby="dropdown01">
-            <%= link_to "Create a new recipe", new_recipe_path, class: "dropdown-item" %>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li>
+      <% if logged_in? %>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Recipes</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+              <%= link_to "Create a new recipe", new_recipe_path, class: "dropdown-item" %>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+      <% end %>
+       
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="text" placeholder="Search">
       <button class="btn btn-outline-success my-2 my-sm-0 color-search-btn" type="submit">Search</button>
     </form>
+    <ul class="navbar-nav mr-2">
+
+        <% if logged_in? %>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= current_chef.chefname.capitalize %>'s Profile</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown01">
+                <%= link_to "View your profile", chef_path(current_chef), class: "dropdown-item" %>
+                <%= link_to "Edit your profile", edit_chef_path(current_chef), class: "dropdown-item" %>
+                <a class="dropdown-item" href="#">Something else here</a>
+                <%= link_to "Log out", logout_path, method: :delete, class: "dropdown-item" %>
+              </div>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to 'Log in', login_path, class: "nav-link" %>
+          </li>
+        <% end %>
+    </ul>
   </div>
 </nav>
