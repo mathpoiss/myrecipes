@@ -34,7 +34,7 @@
         <% if logged_in? %>
 
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= current_chef.chefname.capitalize %>'s Profile</a>
+            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= current_chef.chefname.capitalize %>'s Profile <%= "Admin" if current_chef.admin? %></a>
               <div class="dropdown-menu" aria-labelledby="dropdown01">
                 <%= link_to "View your profile", chef_path(current_chef), class: "dropdown-item" %>
                 <%= link_to "Edit your profile", edit_chef_path(current_chef), class: "dropdown-item" %>
