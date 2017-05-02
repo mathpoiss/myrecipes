@@ -19,7 +19,7 @@ class RecipesController < ApplicationController
 		@recipe = Recipe.new(recipe_params)
 		@recipe.chef = current_chef
 		if @recipe.save
-			flash[:succes] = "Recipe was created successfully"
+			flash[:success] = "Recipe was created successfully"
 			redirect_to recipe_path(@recipe)
 		else
 			render 'new'
@@ -32,7 +32,7 @@ class RecipesController < ApplicationController
 
 	def update
 		if @recipe.update(recipe_params)
-			flash[:succes] = "Recipe was updated successfully"
+			flash[:success] = "Recipe was updated successfully"
 			redirect_to recipe_path(@recipe)
 		else
 			render 'edit'
@@ -41,7 +41,7 @@ class RecipesController < ApplicationController
 
 	def destroy
 		Recipe.find(params[:id]).destroy
-		flash[:succes] = "Recipe deleted successfully"
+		flash[:success] = "Recipe deleted successfully"
 		redirect_to recipes_path 
 	end
 
@@ -53,7 +53,7 @@ class RecipesController < ApplicationController
 	end
 
 	def recipe_params
-		params.require(:recipe).permit(:name, :description)
+		params.require(:recipe).permit(:name, :description, ingredient_ids: [])
 	end
 
 	def require_same_user

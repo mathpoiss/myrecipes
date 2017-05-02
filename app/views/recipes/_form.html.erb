@@ -26,6 +26,19 @@
 
 		<div class="form-group row col-8">
 			<div class="offset-4">
+				<%= f.collection_check_boxes :ingredient_ids, Ingredient.all, :id, :name do |cb| %>
+
+					<label class="custom-control custom-checkbox">
+						<span class="custom-control-description">
+						<%= cb.label {cb.check_box(class: "custom-control-indicator") + cb.text} %>
+						</span>
+					</label>
+				<% end %>
+			</div>
+		</div>
+
+		<div class="form-group row col-8">
+			<div class="offset-4">
 				<%= f.submit "Sign up", class: "btn btn-primary btn-xlarge" %>
 			</div>
 		</div>

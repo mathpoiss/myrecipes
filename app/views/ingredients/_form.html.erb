@@ -1,0 +1,29 @@
+<%= render 'shared/errors', obj: @ingredient %>
+
+
+<div class="container">
+	<%= form_for(@ingredient, :html => {role: "form"}) do |f| %>
+
+		<div class="form-group row justify-content-center">
+			<label class="col-1 form-control-label text-right">
+			 	<strong><%= f.label :name %></strong>
+			</label>
+
+			<div class="col-8">
+			    <%= f.text_field :name, class: "form-control", placeholder: "Enter ingredient", autofocus: true %>
+			</div>
+		</div>
+
+		<div class="form-group row col-8">
+			<div class="offset-4">
+				<%= f.submit(@ingredient.new_record? ? "Add Ingredient" : "Update ingredient",
+						 class: "btn btn-primary btn-xlarge" )%>
+			</div>
+		</div>
+
+		<div class="col-md-4 offset-4 colormatch">
+			[<%= link_to "Cancel request and return to recipes listing",recipes_path %>]
+		</div>
+
+	<% end %>
+</div>
