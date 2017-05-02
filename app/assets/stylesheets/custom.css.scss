@@ -34,7 +34,15 @@ $navbar-default-bg: black;
 	height: 500px;
 }
 
-.jumbotron h1, h3 {
+.jumbotron h1, {
+	color: #fff;
+	text-align: center;
+	font-weight: bold;
+	margin-bottom: 40px;
+	letter-spacing: -1px;
+}
+
+.jumbotron h3, {
 	color: #fff;
 	text-align: center;
 	font-weight: bold;
