@@ -51,7 +51,7 @@
 	
 		<hr />
 
-		<%= form_for([@recipe, @comment], :html => {role: "form"}) do |f| %>
+		<%= form_for([@recipe, @comment], remote: true, :html => {role: "form"}) do |f| %>
 
 			<div class="form-group row justify-content-center">
 				<label class="col-1 form-control-label text-right">
@@ -79,7 +79,6 @@
 			<h3>Prior Comments: </h3>
 				<div id="messages">
 					<%= render partial: 'comments/comments', object: @comments %>
-				
 				</div>
 		</div>
 	</div>

@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+  Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root "pages#home"
   get 'pages/home', to: 'pages#home'
@@ -15,4 +15,7 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   resources :ingredients, except: [:destroy]
+
+  mount ActionCable.server => '/cable'
+  
 end
