@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-  skip_before_filter :verify_authenticity_token
   protect_from_forgery prepend: true, with: :exception
 
   helper_method :current_chef, :logged_in?
