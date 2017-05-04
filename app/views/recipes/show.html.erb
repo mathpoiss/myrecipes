@@ -51,7 +51,7 @@
 	
 		<hr />
 
-		<%= form_for([@recipe, @comment], remote: true, :html => {role: "form"}) do |f| %>
+		<%= form_for([@recipe, @comment], remote: true, authenticity_token: true, :html => {role: "form"}) do |f| %>
 
 			<div class="form-group row justify-content-center">
 				<label class="col-1 form-control-label text-right">
